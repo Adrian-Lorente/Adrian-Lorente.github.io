@@ -1,0 +1,399 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+/*GRID CONTAINER*/
+.grid-container{
+    display: grid;
+    width: 100vw;
+    height: 100vh;
+    background-color: #3f3fbc;
+    grid-template-areas:
+        "head nav"
+        "barra main"
+        "foot foot";
+    grid-template-columns: 15% 85%;
+    grid-template-rows: 10% 75% 15%;
+}
+/*LOGO Y TITULO DE LA APLICACIÓN*/
+.seccion_logotitulo {
+    grid-area: head;
+    background-color: #16161A;
+    color: white;
+    float: left;
+    border: 1px solid rgb(31, 30, 30);
+}
+.seccion_logotitulo img{/*LOGO */
+    float:left;
+    width: auto;
+    height: 100%;
+}
+.cometmusic{/*TITULO*/
+    grid-area: head;
+    text-align: center;
+    display: grid;
+    align-items: center;
+    margin-top: 25px;
+
+}
+/*##################################################*/
+/*######### INICIO SESIÓN Y REGISTRO #################*/
+/*##################################################*/
+.seccion_sesion{
+    grid-area: nav;
+    color: white;
+    background-color: #16161A;
+    display: grid;
+    place-items: center;
+    grid-template-areas:
+        "hueco4 inicio regis";
+        grid-template-columns: 74% 12% 12%;
+        grid-template-rows: 100%;
+}
+.hueco4{grid-area: hueco4;}
+.seccion_sesion .inicio button{grid-area: inicio;/* BOTÓN INICIO SESIÓN*/
+    font-size: 20px;
+    background-color: #7F5AF0;
+    cursor: pointer;
+    margin:10px;
+    color: white;
+    font-family: 'Inter';
+    width: 110%;
+    }
+.seccion_sesion .regis button{grid-area: inicio;/*BOTÓN REGISTRARSE*/
+    font-size: 20px;
+    background-color: #7F5AF0;
+    cursor: pointer;
+    margin:10px;
+    color: white;
+    font-family: 'Inter';
+    width: 110%;
+    }
+a {/*Links del menú de las 5 funcionalidades de la izquierda + Privacidad/Cookies*/
+    display: block;
+    width: auto;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: 200;
+    border-radius: 10px;
+    padding: 15px 30 px;
+    text-decoration: none;
+    color: white;
+}
+/*##################################################*/
+/*######### MENÚ COLUMNA IZQUIERDA #################*/
+/*##################################################*/
+.seccion_menu{
+    grid-area: barra;
+    color: white;
+    background-color: #16161A;
+    display: flex;
+    width: 100%;
+}
+
+.seccion_menu ul {
+    float: left;
+    display: block;
+    position: relative;
+    list-style: none;
+    white-space: nowrap;
+    width: 100%; 
+}
+
+.seccion_menu ul li a img {
+    margin-right: 20px;
+    vertical-align: middle;
+}
+
+.botonesarriba {
+
+}
+
+.botonesabajo {
+    margin-top: 100%;
+    text-align: center;
+}
+
+.imgabajo {
+    display: block;
+    margin: auto;
+}
+
+.seccion_menu ul li {
+}
+
+.seccion_menu ul li a {
+    margin-left: 10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+
+}
+
+/*##################################################*/
+/*######### COLUMNA DERECHA (SECCIÓN PRINCIPAL)#################*/
+/*##################################################*/
+.principal{
+    grid-area: main;
+    background-color: #242629;
+    overflow: auto;
+    text-align: left;
+}
+/*Imágenes de las canciones*/
+.principal img{
+    width: 100%;
+    height: auto;}
+/*TITULOS*/
+.titulo_main{
+    margin-top: 15px;
+    color: #FFFFFE;}
+
+.tit_like{
+    margin-top: 15px;
+    color: #FFFFFE;
+    text-align: center;
+    font-size: 35px;
+    font-family: 'Inter';}
+
+.tit_buscador{ /*Titulo de la seccion del buscador*/
+    margin-top: 15px;
+    color: #FFFFFE;
+    font-size: 35px;
+    font-family: 'Inter';;
+    padding-left: 5%;
+}
+
+.tit_resultados{ /*Texto de los resultados de la búsqueda*/
+    margin-top: 15px;
+    color: #FFFFFE;
+    font-size: 25px;
+    font-family: 'Inter';;
+    padding-left: 5%;
+}
+
+.tit_playlist{ /*Titulo de la sección de la playlist*/
+    margin-top: 15px;
+    color: #FFFFFE;
+    text-align: center;
+    font-size: 35px;
+    font-family: 'Inter';;
+}
+.tit_playlist_nombre{ /*Nombre de la Playlist*/
+    margin-top: 15px;
+    color: #FFFFFE;
+    text-align: center;
+    font-size: 35px;
+    font-family: 'Inter';;
+}
+.descripcion_playlist{ /*Texto de la descripción de la playlits*/
+    margin-top: 15px;
+    color: #FFFFFE;
+    text-align: center;
+    font-size: 20px;
+    font-family: 'Inter';;
+}
+/*CATEGORIAS DE LAS CANCIONES ()*/
+.categ_main{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+}
+/*Canciones separadas*/
+.song{
+    border-radius: 10px;
+    transition: 0.55s ease;
+    background: #16161A;
+    padding: 10px 10px 30px 10px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 500;
+    margin: 30px;
+    width: 180px;
+    /*Si algo del tamaño de las canciones se lia, quitar el height*/
+    height: 180px;
+    color: #94A1B2;
+    
+}
+.song:hover{scale: 1.15;}
+.song:hover audio{display:grid;}
+
+/*Etiqueta audio*/
+audio {
+    display: none;
+    width: 88%;
+    height: 10%;
+    margin: 0;
+    position: absolute;
+    top: 67%;
+    left:50%;
+    -ms-transform: translate(-10%, -67%);
+    transform: translate(-50%, -67%);
+}
+
+/*FORMULARIO PARA EL REGISTRO DEL USUARIO*/
+.form-register {
+    width: 800px;
+    background: #242629;
+    padding: 30px;
+    margin: auto;
+    margin-top: 10px;
+    border-radius: 4px;
+    font-family: 'calibri';
+    color: white;
+    align-items: center;
+  }
+  
+  .form-register h2 {
+    font-size: 40px;
+    margin-bottom: 40px;
+    text-align: center;
+    font-family: 'Inter';
+  }
+  
+  .control_reg {
+    width: 100%;
+    background: #16161A;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 16px;
+    border: 1px solid #16161A;
+    font-family: 'calibri';
+    font-size: 18px;
+    color: #94A1B2;
+    text-align: center;
+  }
+  
+  .form-register p {
+    height: 40px;
+    font-size: 18px;
+    line-height: 40px;
+  }
+  /*No tengo ni idea de como centrar el botón, mi idea era que el width sea del 50%*/
+  /*para hacerlo más pequeño pero no sé como centrarlo. A ver si lo consigo*/
+  .form-register button{
+    width: 100%;
+    background: #7F5AF0;
+    border: none;
+    padding: 12px;
+    color: white;
+    margin: 16px 0;
+    font-size: 16px;
+    text-align: center;
+    cursor: pointer;
+  }
+
+
+
+/*INICIAR SESIÓN*/
+.control_ses {
+    width: 100%;
+    background: #16161A;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 60px;
+    border: 1px solid #16161A;
+    font-family: 'calibri';
+    font-size: 18px;
+    color:#94A1B2;
+    text-align: center;
+    cursor: pointer;
+}
+
+/*##################################################*/
+/*######### BUSCADOR #################*/
+/*##################################################*/
+.buscador_canciones .buscarsong{/*Campo para buscar*/
+    margin-top: 20px;
+    color: #94A1B2;
+    font-size: 20px;
+    font-family: 'Inter';;
+    background-color: #16161A;
+}
+/*##################################################*/
+/*######### PLAYLIST #################*/
+/*##################################################*/
+.categ_playlist{
+    margin-top: 70px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;}
+
+.playlist_songs{
+    border-radius: 10px;
+    background: #16161A;
+    padding: 10px 10px 30px 10px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 500;
+    margin: 30px;
+    width: 180px;
+    /*Si algo del tamaño de las canciones se lia, quitar el height*/
+    height: 180px;
+    color: #94A1B2;
+    font-size: 30px;    
+    }
+
+/*##################################################*/
+/*#########DENTRO DE CADA PLAYLIST #################*/
+/*##################################################*/
+.categ_dentroplaylist{
+    align-items: center;
+}
+
+.song_playlist{
+    border-radius: 10px;
+    transition: 0.55s ease;
+    background: #16161A;
+    padding: 10px 10px 30px 10px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 500;
+    margin: 30px;
+    width: 180px;
+    /*Si algo del tamaño de las canciones se lia, quitar el height*/
+    height: 180px;
+    color: #94A1B2;,}
+        
+.song_playlist:hover{scale: 1.15;}
+.song_playlist:hover audio{display:grid;}
+
+
+/*##################################################*/
+/*######### FOOTER #################*/
+/*##################################################*/
+  .footer{
+    grid-area: foot;
+    color: white;
+    background-color: rgb(31, 30, 30);
+    text-align: center;
+    display: grid;
+    align-items: center;}
+
+/*##################################################*/
+/*######### VERSIÓN MOVIL #################*/
+/*##################################################*/
+@media only screen and (max-width:600px){
+
+    .cometmusic{font-size: 18px;}
+
+    .Textomenu1{display: none;}
+    .Textomenu2{display: none;}
+    .Textomenu3{display: none;}
+    [class*="img-"]{margin-left: 30%;}
+
+    .seccion_sesion{grid-template-columns: 50% 25% 25%;}
+
+    .short{display: inline;}
+
+    .full{display: none;}
+
+    .form-register{display: none;}
+}
+
+/*##################################################*/
+/*######### VERSIÓN TABLET #################*/
+/*##################################################*/
+@media only screen and (max-width:768px) and (min-width:601px){
+
+    .cometmusic{margin-top: 10px;}
+
+    .Textomenu2{margin-top: 10px;}
+
+    .seccion_sesion{grid-template-columns: 60% 20% 20%;}
+}
